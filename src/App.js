@@ -1,21 +1,44 @@
+/** @format */
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import * as exercises from 'exercises';
+import * as exercises from './exercises';
 
 class App extends Component {
-  state = { exercise: null }
-
   render() {
+    const params = new URL(window.location.href).searchParams;
+    const exercise = params.get('exercise');
+
+    const Content = exercises[exercise] ? exercises[exercise] : Welcome;
+
     return (
       <div className="App">
-        <nav>
-          { Object.keys( exercises ).map( ExerciseComponent => <a href=`/?exercise=${}`
+        <nav className="App__Nav">
+          {Object.keys(exercises).map(component => (
+            <a
+              key={component}
+              href={`/?exercise=${component}`}
+            >{`${component[0].toUpperCase()}${component.slice(1)}`}</a>
+          ))}
         </nav>
+        <Content />
       </div>
     );
   }
+}
+
+function Welcome() {
+  return (
+    <section>
+      <header>
+        <h1>Welcome to the exercises!</h1>
+      </header>
+      <div>
+        <p>Click on an exercise to begin</p>
+      </div>
+    </section>
+  );
 }
 
 export default App;
