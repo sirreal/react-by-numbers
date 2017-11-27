@@ -7,7 +7,7 @@ import React from 'react';
  *
  * Has que el prop `subTitle` sea el contenido en texto.
  */
-class PropsRenderExercise extends React.Component {
+export class PropsRenderExercise extends React.Component {
   render() {
     return <p>{this.props.subTitle}</p>;
   }
