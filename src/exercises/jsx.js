@@ -2,6 +2,11 @@
 
 import React from 'react';
 
+/**
+ * Simplemente escribe JSX dentro de este componente
+ *
+ * Basta con poner un poco de HTML!
+ */
 export default class JsxExercise extends React.Component {
   render() {
     return (

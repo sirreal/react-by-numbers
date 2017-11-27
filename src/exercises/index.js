@@ -1,7 +1,10 @@
 /** @format */
 
 import jsx from './jsx';
-import props from './props';
+import propsRender from './props-render';
+import propsPass from './props-pass';
 import state from './state';
+import children from './children';
+import renderArray from './render-array';
 
-export { jsx, props, state };
+export { jsx, propsRender, propsPass, state, children, renderArray };
