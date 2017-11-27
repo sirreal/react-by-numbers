@@ -16,10 +16,9 @@ class App extends Component {
       <div className="App">
         <nav className="App__Nav">
           {Object.keys(exercises).map(component => (
-            <a
-              key={component}
-              href={`/?exercise=${component}`}
-            >{`${component[0].toUpperCase()}${component.slice(1)}`}</a>
+            <a key={component} href={`/?exercise=${component}`}>
+              {component}
+            </a>
           ))}
         </nav>
         <Content />
