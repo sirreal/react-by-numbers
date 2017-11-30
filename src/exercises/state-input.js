@@ -1,17 +1,13 @@
 /** @format */
 
 import React from 'react';
+import withInstructions from '../with-instructions';
 
-/**
- * Este componente utiliza state
- *
- * Se debe
- *   * inicializar un contador en 0
- *   * crear un `<button>` que incremente la cuenta
- *   * renderizar la cuenta en un elemento cuyo id sea `clicks`
- *
- */
-export default class StateInput extends React.Component {
+export class StateInput extends React.Component {
+  static instructions = `
+  to do
+  `;
+
   state = { formInput: '', storedInput: '' };
 
   render() {
@@ -38,3 +34,5 @@ export default class StateInput extends React.Component {
     );
   }
 }
+
+export default withInstructions(StateInput);

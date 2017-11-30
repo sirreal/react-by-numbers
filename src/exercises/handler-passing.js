@@ -2,11 +2,18 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import withInstructions from '../with-instructions';
 
 /**
  * Este componente crea un handler.
  */
 export class HandlerPassing extends React.Component {
+  static instructions = `
+  Este componente recibe la prop \`handler\`.
+
+  Crea un \`button\` que llame a esta prop cuando sea haga click.
+  `;
+
   static propTypes = { hanlder: PropTypes.func };
   static defaultProps = { handler: () => {} };
 
@@ -20,12 +27,17 @@ export class HandlerPassing extends React.Component {
 }
 
 /**
- * No toques!
+ * ***************
+ * No toques esto!
+ * ***************
  */
-export default class extends React.Component {
-  handler = () => alert('Button was clicked!');
+export default withInstructions(
+  class extends React.Component {
+    static instructions = HandlerPassing.instructions;
+    handler = () => alert('Button was clicked!');
 
-  render() {
-    return <HandlerPassing handler={this.handler} />;
-  }
-}
+    render() {
+      return <HandlerPassing handler={this.handler} />;
+    }
+  },
+);

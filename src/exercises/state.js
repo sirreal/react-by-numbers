@@ -1,17 +1,22 @@
 /** @format */
 
 import React from 'react';
+import withInstructions from '../with-instructions';
+
+export class State extends React.Component {
+  static instructions = `
 
 /**
  * Este componente utiliza state
  *
  * Se debe
  *   * inicializar un contador en 0
- *   * crear un `<button>` que incremente la cuenta
- *   * renderizar la cuenta en un elemento cuyo id sea `clicks`
+ *   * crear un \`<button>\` que incremente la cuenta
+ *   * renderizar la cuenta en un elemento cuyo id sea \`clicks\`
  *
  */
-export default class StateExercise extends React.Component {
+  `;
+
   state = { clicks: 0 };
 
   render() {
@@ -37,3 +42,5 @@ export default class StateExercise extends React.Component {
     );
   }
 }
+
+export default withInstructions(State);

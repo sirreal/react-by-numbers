@@ -1,17 +1,15 @@
 /** @format */
 
 import React from 'react';
+import withInstructions from '../with-instructions';
 
-/**
- * Este componente crea un handler.
- *
- * Se debe
- *   * crear un método que loguea 'click' a la consola
- *   * crear un `<button>` que llama al susodicho método en su `onClick`
- *   * pasa el prop `type="button"` para que no sea del tipo `submit`
- *
- */
-export default class EventHandlingExercise extends React.Component {
+export class EventHandling extends React.Component {
+  static instructions = `
+  Renderiza un \`button\` cuyo \`onClick\` loguea a la consola.
+
+  __Pista__: \`button\` accepta una prop \`onClick\`…
+  `;
+
   handler = () => console.log('click');
 
   render() {
@@ -22,3 +20,5 @@ export default class EventHandlingExercise extends React.Component {
     );
   }
 }
+
+export default withInstructions(EventHandling);

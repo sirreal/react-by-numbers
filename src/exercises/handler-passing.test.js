@@ -2,20 +2,15 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import { EventHandling } from '.';
+import { HandlerPassing } from './handler-passing';
 
-describe('EventHandling', () => {
+describe('HandlerPassing', () => {
   test('should log on click', () => {
-    const mounted = mount(<EventHandling />);
-    const logSpy = jest
-      .spyOn(global.console, 'log')
-      .mockImplementation(() => {});
+    const handlerSpy = jest.fn();
+    const mounted = mount(<HandlerPassing handler={handlerSpy} />);
 
     mounted.find('button').simulate('click');
-    expect(logSpy).toHaveBeenCalledTimes(1);
-    expect(logSpy).toHaveBeenCalledWith('click');
 
-    logSpy.mockRestore();
-    mounted.unmount();
+    expect(handlerSpy).toHaveBeenCalledTimes(1);
   });
 });

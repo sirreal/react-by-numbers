@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { render } from 'enzyme';
-import { PropsRenderExercise } from './props-render';
+import { PropsRender } from './props-render';
 
 describe('PropsRender', () => {
   test('should render pass props', () => {
     const passedString = 'passed string';
-    const rendered = render(<PropsRenderExercise subTitle={passedString} />);
+    const rendered = render(<PropsRender subTitle={passedString} />);
     expect(rendered.text()).toMatch(passedString);
   });
 });

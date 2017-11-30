@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PropsPass } from '.';
+import { PropsPass } from './props-pass';
 
 describe('PropsPass', () => {
   test('should pass a title prop', () => {
