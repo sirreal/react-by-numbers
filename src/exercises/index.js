@@ -1,14 +1,14 @@
 /** @format */
 
-import Jsx from './jsx';
-import PropsRender from './props-render';
-import PropsPass from './props-pass';
+import Children from './children';
 import EventHandling from './event-handling';
+import HandlerPassing from './handler-passing';
+import Jsx from './jsx';
+import MapRender from './map-render';
+import PropsPass from './props-pass';
+import PropsRender from './props-render';
 import State from './state';
 import StateInput from './state-input';
-import Children from './children';
-import RenderArray from './render-array';
-import HandlerPassing from './handler-passing.js';
 
 export {
   Jsx,
@@ -18,6 +18,6 @@ export {
   HandlerPassing,
   State,
   StateInput,
+  MapRender,
   Children,
-  RenderArray,
 };

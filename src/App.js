@@ -46,22 +46,30 @@ Están ordenados progresivamente, pero no hay obligación de seguir paso a paso.
 
 Recuerda, jsx es:
 
+<ComponentName propName="string-value" orJavaScriptProp={ [ 'jsExpressions', 'go', 'in', 'braces' ].join(' ') } booleanProp >
+
 Haz clic en un [ejercicio](/?exercise=Jsx) para empezar.
 
 Antes de empezar:
 
 1. Instalar dependencias:
+
    \`\`\`yarn\`\`\`
+
 1. Arrancar app:
+
    \`\`\`yarn start\`\`\`
+
 1. Arrancar pruebas:
+
    \`\`\`yarn test\`\`\`
+
 `);
 
 const welcomeContent = (
   <section className="Welcome">
     <header>
-      <h1>Welcome to the exercises!</h1>
+      <h1>Ejercicios</h1>
     </header>
     <div dangerouslySetInnerHTML={{ __html: welcomeInstructions }} />
   </section>

@@ -26,13 +26,9 @@ export class PropsPass extends React.Component {
 }
 
 /**
- *
- * ***************
  * ***************
  * No toques esto!
  * ***************
- * ***************
- *
  */
 class PassMeATitleProp extends React.Component {
   render() {

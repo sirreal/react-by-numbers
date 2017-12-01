@@ -5,32 +5,36 @@ import withInstructions from '../with-instructions';
 
 export class StateInput extends React.Component {
   static instructions = `
-  to do
+  Vamos a hacer un contador utilizand _state_
+
+  - Inicializa el estado.
+  - Renderiza un \`<input type="text"/>\` cuyo \`value\` viene del estado
+  - Guarde en estado el valor del input utilizando su prop \`onChange\`
+  - Renderiza mismo valor del input en otro elemento cuyo id sea \`inputValue\`
+
+
+  Con esto se ve la forma recomendada de trabajar con elementos \`input\`.
+
+  __Pista:__
+
+  Recuerda que el \`onChange\` recibe un evento…
   `;
 
-  state = { formInput: '', storedInput: '' };
+  state = { formInput: '' };
+
+  handleChange = ({ target: { value: formInput } }) =>
+    this.setState({ formInput });
 
   render() {
     return (
-      <section>
-        <header>
-          <h1>State</h1>
-          <div>
-            <label htmlFor="stateInput" />
-            <input type="text" />
-          </div>
-          <div>
-            <button
-              type="button"
-              onClick={() =>
-                this.setState(({ clicks }) => ({ clicks: clicks + 1 }))
-              }
-            >
-              Click!
-            </button>
-          </div>
-        </header>
-      </section>
+      <div>
+        <input
+          type="text"
+          value={this.state.formInput}
+          onChange={this.handleChange}
+        />
+        <div id="inputValue">{this.state.formInput}</div>
+      </div>
     );
   }
 }
